@@ -1,0 +1,104 @@
+ 
+  <div class="modal fade" id="uz_modal_1" tabindex="-1" aria-labelledby="info_modal_5" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u>Кўпбўғинли сўзлар:</u></p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="tab-4">
+
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Кўпбўғинли сўзлар</th>
+                <th>Узунлик (ҳарфлар билан)</th>
+                <th>Частотаси</th>
+              </tr>
+            </thead>
+         
+            <tbody>
+            
+              {% for freq, fquant in longw_frequencies.items %}
+                <tr>
+                  <th>&nbsp;</th>
+                  <td>{{freq.0}}</td>
+                  <td>{{freq.1}}</td>
+                  <td>{{fquant}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="modal fade" id="uz_modal_2" tabindex="-1" aria-labelledby="info_modal_6" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u>Қийин сўзлар</u>  – икки (ёки ундан кўп) сўзни ўз ичига олган сўз илдиз. Улар, қоида тариқасида, нутқнинг мустақил қисмларидан ҳосил бўлиб, бутун сўзни ёки унинг бир қисмини ўз таркибида сақлайди.</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Қийин ва жуфт сўзлар</th>
+                <td>&nbsp;</td>
+                <th>Частотаси</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in lcword_frequencies.items %}
+                <tr>
+                  <td>{{freq}}</td>
+                  <td>&nbsp;</td>
+                  <td>{{fquant}}</td>
+                  
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="modal fade" id="uz_modal_3" tabindex="-1" aria-labelledby="info_modal_7" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;">
+            1-4-класстар үчүн <u>сейрек кездешүүчү сөздөр</u> текстти окууда жана түшүнүүдө кыйынчылыктарды жаратат</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Сейрек сөздөрдүн тизмеси</th>
+                <td>&nbsp;</td>
+                <th>Жыштыгы</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in rareword_frequencies.items %}
+            <tr>
+              <td>{{freq}}</td>
+              <td>&nbsp;</td>
+              <td>{{fquant}}</td>
+          
+            </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 

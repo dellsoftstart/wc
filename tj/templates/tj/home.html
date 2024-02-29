@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <title>WordCalc</title>
+</head>
+
+<body>
+ 
+
+  <!-- Logo -->
+  <div class="container logo_container">
+    <img src="{% static 'img/usaid_kg.png' %}" class="img-fluid  logo1" alt="..." style="height:50px">
+    <img src="{% static 'img/moes_kg.png' %}" class="img-fluid logo2" alt="..." style="height:50px">
+  
+</div>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-secondary.bg-gradient navbar-light  py-2 fixed-static-top ">
+    <div class="container">
+      <a href="/tj"><i class="fa fa-server "></i><span class="text-danger  fw-bold mx-1"> WordCalc</span> </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Забон
+            </a>
+            <div class="dropdown-menu dropdown-menu_language" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/ru">
+                <img class="flag_link" src="{% static 'img/flag/ru.svg' %}">
+              </a>
+              <a class="dropdown-item" href="/uz">
+                <img class="flag_link" src="{% static 'img/flag/uz.svg' %}">
+              </a>
+              <a class="dropdown-item" href="/kg">
+                <img class="flag_link" src="{% static 'img/flag/kg.svg' %}">
+              </a>
+              
+
+            </div>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Showcase -->
+  <section class="bg-ligth text-dark p-5 p-lg-0 pt-lg-5 text-sm-start">
+    <div class="container home_container d-flex mb-5">
+        <div style="flex:1 0 0;">
+          <span class="title_text">ҚАРОРҲОИ ИНТЕЛЛЕКТУАЛӢ БАРОИ ТАҲЛИЛИ МАТН</span>
+          <span class="title_sub_text" >
+            Платформаи WordCalc барои муаллимон, мактаббачагон ва волидони онҳо пешбинӣ шудааст. WordCalc ба шумо кӯмак мекунад, ки мураккабии матнҳоро арзёбӣ кунед ва санҷед, ки оё онҳо ба сатҳи беназири малакаҳои хониши фарзанди шумо мувофиқат мекунанд. Бо WordCalc, шумо метавонед донишҷӯро ба раванди таълим ҷалб кунед, то боварӣ ҳосил кунед, ки ӯ он чизеро, ки мехонад, мефаҳмад ва худи донишҷӯ метавонад рушди хониши худро пайгирӣ кунад. WordCalc ба мактаббачагон кӯмак мекунад, ки луғат ва сатҳи хониши худро арзёбӣ кунанд ва ба муаллимон дар интихоби китобҳои дарсӣ барои категорияҳои гуногуни мактаббачагон кӯмак расонанд.
+          </span>
+          <a href="/tj/analyze" class="btn btn-primary btn-md shadow-none btn_df">
+            Таҳлил
+          </a>
+        </div>
+        <div class="title_image">
+          <img src="{% static 'img/main_kg1.png' %}" style="padding-top: 50px;",  class="intro__image">
+        </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-3 bg-light text-dark text-center position-relative pt-3">
+    <div class="container">
+      <div class="footer_menu pb-3">
+        <div class="footer_menu_left">
+            <div class="footer_menu_left_img">
+              <a href="/tj"><img src="{% static 'img/Dell.png' %}" class="logo" alt="..." style="height:80px" alt="Логотип"></a>
+              <a href="https://okuukeremet.com/" target="_blank"><img src="{% static 'img/ok.png' %}" class="logo" alt="..." style="height:80px" alt="Логотип"></a>
+            </div>
+            <div class="footer_menu_text">  </div>
+        </div>
+        <div class="footer_menu_right">
+          <div class="footer_menu_right_col">
+            <a class="footer_menu_header">Меню</a>
+            <a href="/" class="footer_menu_item">Рӯйхати истилоҳот</a>
+            <a href="/" class="footer_menu_item">Луғати басомад</a>
+            <a href="/" class="footer_menu_item">Луғат</a>
+
+          </div>
+          <div class="footer_menu_right_col">
+            <span class="footer_menu_header">КОНТАКТЫ</span>
+            <a href="/" class="footer_menu_item">info@wc.com</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <p style="text-align: center ;font-size: 14px;">
+        Ин барнома ба шарофати дастгирии мардуми Амрико тавассути Агентии ИМА оид ба рушди байналмилалӣ (USAID) таҳия шудааст. Мундариҷаи барнома ҳатман нуқтаи назари USAID ё ҳукумати Иёлоти Муттаҳидаи Амрикоро инъикос намекунад.
+      
+      </p>
+
+      <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle h1"></i>
+      </a>
+    </div>
+  </footer>
+  
+
+
+
+
+  <script src="{% static '/js/jquery.min.js' %}"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <!-- <script src="{% static '/js/scripts.js' %}"></script> -->
+  <!-- <script src="{% static '/js/stopWords.js' %}"></script> -->
+  <!-- <script src="{% static 'js/eval.js' %}"></script> -->
+  <!-- <script src="{% static 'js/export.js' %}"></script> -->
+  <!-- <script src="{% static 'js/fileLoad.js' %}"></script> -->
+  <!-- <script src="{% static 'js/mammoth.browser.js' %}"></script> -->
+  <script src="{% static 'js/loading-bar.min.js' %}"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

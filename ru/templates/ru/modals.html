@@ -1,0 +1,168 @@
+
+    
+  <div class="modal fade" id="info_modal_1" tabindex="-1" aria-labelledby="info_modal_1" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <b>Многосложные слова:</b></p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="tab-4">
+
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Многосложные слова</th>
+                <th>Длина</th>
+                <th>Частота</th>
+              </tr>
+            </thead>
+         
+            <tbody>
+            
+              {% for freq, fquant in longw_frequencies.items %}
+                <tr>
+                  <th>&nbsp;</th>
+                  <td>{{freq.0}}</td>
+                  <td>{{freq.1}}</td>
+                  <td>{{fquant}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+  
+  <div class="modal fade" id="info_modal_2" tabindex="-1" aria-labelledby="info_modal_2" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <b>Сложное слово</b> — это слово, имеющее в своём составе два (и более) корня. Образуются, как правило, от самостоятельных частей речи, сохраняя в своём составе целиком слово или его часть.</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Сложные слова</th>
+                <td>&nbsp;</td>
+                <th>Частота</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in lcword_frequencies.items %}
+                <tr>
+                  <td>{{freq}}</td>
+                  <td>&nbsp;</td>
+                  <td>{{fquant}}</td>
+                  
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+  
+  <div class="modal fade" id="info_modal_3" tabindex="-1" aria-labelledby="info_modal_3" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"><b>Редкие слова для 1-4 классов</b></p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Список редких слов</th>
+                <td>&nbsp;</td>
+                <th>Частота</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in rareword_frequencies.items %}
+            <tr>
+              <td>{{freq}}</td>
+              <td>&nbsp;</td>
+              <td>{{fquant}}</td>
+          
+            </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="modal fade" id="info_modal_4" tabindex="-1" aria-labelledby="info_modal_4" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <b>Лексическое разноообразие </b></p>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p style="text-align: justify;">Коэффициент лексического разнообразия (КЛР, индекс лексического разнообразия, англ. lexical diversity, LD) &mdash; количественная характеристика текста, отражающая степень богатства словаря при построении текста заданной длины. В основе показателя лежит соотношение числа отдельных лексических единиц (лемм, англ. types) и количества их употреблений в тексте (текстоформ, англ. tokens).</p>
+<p style="text-align: justify;">Вычисляется по формуле:</p>
+<h4 style="text-align: justify;">Ld = Nlex / N,</h4>
+<p style="text-align: justify;">где</p>
+<ul style="list-style-type: square;">
+<li style="text-align: justify;">Ld - коэффициент лексического разнообразия,</li>
+<li style="text-align: justify;">Nlex - количество уникальных лексем, или лемм, в анализируемом тексте,</li>
+<li style="text-align: justify;">N- количество текстоформ (общее количество слов) в анализируемом тексте.</li>
+</ul>
+<p style="text-align: justify;">Лексически богатый текст обладает высоким коэффициентом лексического разнообразия, то есть на единицу объёма текста приходится максимальное количество уникальных единиц, лексически бедный текст обнаруживает тенденцию к повторению одних и тех же лексем, за счет чего его лексическое разнообразие снижается.&nbsp;</p>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="info_modal_5" tabindex="-1" aria-labelledby="info_modal_5" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"><b>Формула удобочитаемости Флеша (Оборнева 2006 г.) </b></p>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Формула: </b></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="info_modal_6" tabindex="-1" aria-labelledby="info_modal_6" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"><b>Показатель Фога (Ганнинга)</b></p>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Формула: </b></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
