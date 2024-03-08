@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class tjText(models.Model):
-    grade = models.IntegerField( null=True, blank=True, verbose_name="Класс")
+    
     book_title = models.CharField(max_length=255, null=True, blank=True, verbose_name='Название произведения')
     book_author = models.CharField(max_length=255, null=True, blank=True, verbose_name='Автор')
     book_text = models.TextField(null=True, blank=True,verbose_name='Текст')

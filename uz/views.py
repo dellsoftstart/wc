@@ -102,7 +102,6 @@ class IndexView(View):
     
 
     def post(self, request, *args, **kwargs):
-        grade = request.POST['grade']
         title = request.POST['title_name']
         author = request.POST['author']
         message = request.POST['message']
@@ -397,7 +396,7 @@ class IndexView(View):
             if (words_q <= g1_word_q_l3 and syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq  <= g1_multisyllabic_wq_l3) or (sentence_q <= g1_sentence_q_l3 and syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq <= g1_multisyllabic_wq_l3):
                     
                     level_result = "1 синф_1"
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')     
@@ -405,7 +404,7 @@ class IndexView(View):
             elif (words_q > g1_word_q_l3 and words_q <= g2_word_q_l2 and syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2) or (syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and compound_w_q > g1_compw_q_l3 and compound_w_q <= g2_compw_q_l2):
                     
                     level_result = "2 синф_1"
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -413,7 +412,7 @@ class IndexView(View):
             elif (syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and multisyllabic_wq > g1_multisyllabic_wq_l3 and multisyllabic_wq  <= g2_multisyllabic_wq_l2 and compound_w_q <= g2_compw_q_l2) or (words_q > g1_word_q_l3 and words_q <= g2_word_q_l2 and multisyllabic_wq > g1_multisyllabic_wq_l3 and multisyllabic_wq  <= g2_multisyllabic_wq_l2) or (words_q > g1_word_q_l3 and multisyllabic_wq > g1_multisyllabic_wq_l3 and multisyllabic_wq  <= g2_multisyllabic_wq_l2 and compound_w_q > g1_compw_q_l3 and rareword_q > g1_rarew_q_l3 and rareword_q <= g2_rarew_q_l2):
                     
                     level_result = "2 синф_2"
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -422,7 +421,7 @@ class IndexView(View):
             elif (words_q > g2_word_q_l2 and words_q <= g3_word_q_l2 and syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and multisyllabic_wq > g2_multisyllabic_wq_l2 and multisyllabic_wq  <= g3_multisyllabic_wq_l2) or (syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and multisyllabic_wq > g2_multisyllabic_wq_l2 and multisyllabic_wq  <= g3_multisyllabic_wq_l2 and compound_w_q > g2_compw_q_l2 and compound_w_q <= g3_compw_q_l2) or (syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and compound_w_q > g2_compw_q_l2 and compound_w_q <= g3_compw_q_l2):
                     
                     level_result = "3 синф_1 "
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -430,7 +429,7 @@ class IndexView(View):
             elif (syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and multisyllabic_wq > g2_multisyllabic_wq_l2 and multisyllabic_wq  <= g3_multisyllabic_wq_l2):
                     
                     level_result = "3 синф_2 "
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -438,7 +437,7 @@ class IndexView(View):
             elif (syllables_avg > g3_avgwl_insyllables_l2) or (multisyllabic_wq > g3_multisyllabic_wq_l2 and compound_w_q > g3_compw_q_l2) or (words_q > g3_word_q_l2 and multisyllabic_wq > g3_multisyllabic_wq_l2 and compound_w_q > g3_compw_q_l2) or (compound_w_q > g3_compw_q_l2):
                     
                     level_result = "4 синф_1 "
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -446,7 +445,7 @@ class IndexView(View):
             elif (words_q > g3_word_q_l2 and sentence_q > g3_sentence_q_l2 and multisyllabic_wq > g3_multisyllabic_wq_l2):
                     
                     level_result = "4 синф_2 "
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -454,7 +453,7 @@ class IndexView(View):
             elif (words_q > g3_word_q_l1  and words_q < g4_word_q_l1 and  sentence_q > g3_sentence_q_l1 and sentence_q < g4_sentence_q_l1 and syllables_avg > g3_avgwl_insyllables_l2 and multisyllabic_wq > g3_multisyllabic_wq_l2 and rareword_q > g3_rarew_q_l2) or (words_q > g3_word_q_l2  and sentence_q > g3_sentence_q_l2 and multisyllabic_wq > g3_multisyllabic_wq_l2 and compound_w_q > g3_compw_q_l2 and  rareword_q < g4_rarew_q_l1):
                     
                     level_result = "4 синф : матнни текширишимиз керак"
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     messages.info(request, 'юклади')
@@ -462,7 +461,7 @@ class IndexView(View):
             
             else:
                     level_result = "Матн   " + str(words_q)+ " сўздан иборат" + " иккинчи текшириш талаб қилинади..."
-                    book = uzText(grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
+                    book = uzText( book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, compound_w_q=compound_w_q, 
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, all_compound_words_p = all_compound_words_p, complex_w_q=complex_w_q)
                     book.save()
                     

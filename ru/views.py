@@ -72,7 +72,6 @@ class IndexView(View):
     
 
     def post(self, request, *args, **kwargs):
-        grade = request.POST['grade']
         title = request.POST['title_name']
         author = request.POST['author']
         message = request.POST['message']
@@ -359,7 +358,7 @@ class IndexView(View):
             if (syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq  <= g1_longw_q_l3 and lcwords_q <= g1_compw_q_l3 and sentence_avg > g1_avgl_sentences_inw_l3):
                     
                     level_result = "1 класс.Среднюю длину предложений:  " + str(sentence_avg) + " пересмотреть"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -367,7 +366,7 @@ class IndexView(View):
             elif (syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq  <= g1_longw_q_l3  and sentence_avg <= g1_avgl_sentences_inw_l3 and lcwords_q > g1_compw_q_l3) or (syllables_avg <= g1_avgwl_insyllables_l3 and sentence_avg <= g1_avgl_sentences_inw_l3 and  multisyllabic_wq  < g2_longw_q_l2):
                     
                     level_result = "1 класс"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -375,7 +374,7 @@ class IndexView(View):
             elif (syllables_avg > g1_avgwl_insyllables_l3 and sentence_avg <= g1_avgl_sentences_inw_l3 and  multisyllabic_wq  <= g1_longw_q_l3 and lcwords_q <= g1_compw_q_l3 and rareword_q <= g1_rarew_q_l3):
                     
                     level_result = "1 класс.Но средняя длина слова  :  " + str(syllables_avg)+ " в слогах" + " пересмотреть"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -383,7 +382,7 @@ class IndexView(View):
             elif (syllables_avg <= g1_avgwl_insyllables_l3 and  multisyllabic_wq  <= g1_longw_q_l3 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg < g2_avgl_sentences_inw_l2) or (syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq <= g1_longw_q_l3 and  sentence_avg <= g1_avgl_sentences_inw_l3):
                     
                     level_result = "1 класс.Среднюю длину предложений:  " + str(sentence_avg) + " и сложные слова пересмотреть"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
 
@@ -391,7 +390,7 @@ class IndexView(View):
             elif (syllables_avg <= g1_avgwl_insyllables_l3 and multisyllabic_wq  <= g1_longw_q_l3 and sentence_avg <= g1_avgl_sentences_inw_l3):
                     
                     level_result = "1 класс"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -400,7 +399,7 @@ class IndexView(View):
             elif (syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g2_avgl_sentences_inw_l2) or (syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg < g3_avgwl_insyllables_l1 and multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq <= g2_longw_q_l2) or (syllables_avg <= g1_avgwl_insyllables_l3 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g2_avgl_sentences_inw_l2 and  multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq <= g2_longw_q_l2 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2) or  (syllables_avg > g1_avgwl_insyllables_l3 and sentence_avg <= g2_avgl_sentences_inw_l2 and  multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l1 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2) or (syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg <= g2_avgl_sentences_inw_l2 and  multisyllabic_wq < g1_longw_q_l3 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2) or (syllables_avg < g1_avgwl_insyllables_l3 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g2_avgl_sentences_inw_l2 and multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq <= g2_longw_q_l2 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2 and rareword_q > g1_rarew_q_l3 and rareword_q <= g2_rarew_q_l2):
                     
                     level_result = "2 класс"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -408,7 +407,7 @@ class IndexView(View):
             elif (syllables_avg > g2_avgwl_insyllables_l2 and sentence_avg > g1_avgl_sentences_inw_l3 and  multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq <= g2_longw_q_l2 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2):
                     
                     level_result = "2 класс.Ср. длину слова - " + str(syllables_avg)+ " в слогах и ср. длину предложений в словах" + " пересмотреть"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -417,7 +416,7 @@ class IndexView(View):
             elif (syllables_avg < g2_avgwl_insyllables_l2 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g3_avgl_sentences_inw_l1 and  multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2):
                     
                     level_result = "2 класс.Многосложные слова - " + str(multisyllabic_wq)+  " слов, пересмотреть"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -427,7 +426,7 @@ class IndexView(View):
             elif (words_q < g2_word_q_l2  and  sentence_q < g2_sentence_q_l2 and syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g2_avgl_sentences_inw_l2 and lcwords_q > g1_compw_q_l3 and lcwords_q <= g2_compw_q_l2 ) or (words_q > g1_word_q_l3 and words_q <= g2_word_q_l2  and  sentence_q >= g2_sentence_q_l2 and syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg <= g2_avgl_sentences_inw_l2 and lcwords_q <= g2_compw_q_l2 ) or (words_q > g2_word_q_l2  and  sentence_q > g2_sentence_q_l2 and syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg <= g2_avgl_sentences_inw_l2 and lcwords_q <= g2_compw_q_l2 ) or (words_q > g1_word_q_l3 and words_q <= g2_word_q_l2  and  sentence_q > g2_sentence_q_l2 and syllables_avg > g1_avgwl_insyllables_l3 and syllables_avg <= g2_avgwl_insyllables_l2 and sentence_avg > g1_avgl_sentences_inw_l3 and sentence_avg <= g2_avgl_sentences_inw_l2 and multisyllabic_wq > g1_longw_q_l3 and multisyllabic_wq <= g2_longw_q_l2 ):
                     
                     level_result = "2 класс: текст нужно проверить"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -436,7 +435,7 @@ class IndexView(View):
             elif (sentence_avg > g2_avgl_sentences_inw_l2 and sentence_avg <= g3_avgl_sentences_inw_l2 and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2) or (multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2 and lcwords_q > g2_compw_q_l2 and lcwords_q <= g3_compw_q_l2) or (sentence_avg > g2_avgl_sentences_inw_l2 and sentence_avg <= g3_avgl_sentences_inw_l2 and multisyllabic_wq > g3_longw_q_l2 and multisyllabic_wq <= g4_longw_q_l1 and lcwords_q > g2_compw_q_l2 and lcwords_q <= g3_compw_q_l2):
                     
                     level_result = "3 класс"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -445,7 +444,7 @@ class IndexView(View):
             elif (words_q > g2_word_q_l2 and words_q <= g3_word_q_l2 and  sentence_q > g2_sentence_q_l2 and sentence_q <= g3_sentence_q_l2  and sentence_avg > g2_avgl_sentences_inw_l2  and sentence_avg <= g3_avgl_sentences_inw_l2 and lcwords_q > g2_compw_q_l2 and lcwords_q > g3_compw_q_l2) or (words_q < g2_word_q_l2  and  sentence_q < g2_sentence_q_l2  and sentence_avg > g2_avgl_sentences_inw_l2  and sentence_avg <= g3_avgl_sentences_inw_l2 and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2 ) or (words_q > g3_word_q_l2 and  sentence_q > g3_sentence_q_l2  and sentence_avg > g2_avgl_sentences_inw_l2 and syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and sentence_avg <= g3_avgl_sentences_inw_l2 and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq  <= g3_longw_q_l2 and lcwords_q > g2_compw_q_l2 and lcwords_q <= g3_compw_q_l2) or (words_q < g3_word_q_l1 and  sentence_q < g3_sentence_q_l1  and sentence_avg > g2_avgl_sentences_inw_l2 and sentence_avg <= g3_avgl_sentences_inw_l2 and syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2 and lcwords_q > g2_compw_q_l2 and lcwords_q <= g3_compw_q_l2) or (words_q > g2_word_q_l2 and words_q <= g3_word_q_l2 and  sentence_q < g3_sentence_q_l1 and syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2  and sentence_avg > g3_avgl_sentences_inw_l2  and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2) or (words_q > g2_word_q_l2 and words_q <= g3_word_q_l2 and  sentence_q > g3_sentence_q_l2 and syllables_avg > g2_avgwl_insyllables_l2 and syllables_avg <= g3_avgwl_insyllables_l2  and multisyllabic_wq > g2_longw_q_l2 and multisyllabic_wq <= g3_longw_q_l2):
                     
                     level_result = "3 класс: текст нужно проверить"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -453,7 +452,7 @@ class IndexView(View):
             elif (sentence_q > g3_sentence_q_l2 and lcwords_q > g3_compw_q_l2 and multisyllabic_wq > g3_longw_q_l2 and lcwords_q > g3_compw_q_l2) or (syllables_avg > g3_avgwl_insyllables_l2) or (sentence_avg > g3_avgl_sentences_inw_l2 and multisyllabic_wq > g3_longw_q_l2):
                     
                     level_result = "4 класс"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -461,7 +460,7 @@ class IndexView(View):
             elif (words_q > g3_word_q_l1  and words_q < g4_word_q_l1 and  sentence_q > g3_sentence_q_l1 and sentence_q < g4_sentence_q_l1 and syllables_avg > g3_avgwl_insyllables_l2 and multisyllabic_wq > g3_longw_q_l2 and rareword_q > g3_rarew_q_l2) or (words_q > g3_word_q_l2  and sentence_q > g3_sentence_q_l2 and multisyllabic_wq > g3_longw_q_l2 and lcwords_q > g3_compw_q_l2 and  rareword_q < g4_rarew_q_l1):
                     
                     level_result = "4 класс: текст нужно проверить"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     messages.info(request, 'загружен')
@@ -471,7 +470,7 @@ class IndexView(View):
             
             else:
                     level_result = "Текст состоит из " + str(words_q) + " слов и нуждается в дополнительной проверке"
-                    book = ruText( grade = grade, book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
+                    book = ruText(book_title=title, book_author=author,book_text=message, sentence_q=sentence_q, words_q=words_q, syllables_avg=syllables_avg, sentence_avg=sentence_avg, multisyllabic_wq=multisyllabic_wq, lcwords_q=lcwords_q, lcwords_p=lcwors_p,
                                 rareword_q=rareword_q, rareword_p=rareword_p, fw_q=fw_q, fw_p=fw_p, uniq_w=uniquew_q, lexical_div=lexical_d, level_result=level_result, fre_oborneva = fre_oborneva, gunning_fog_index=gunning_fog_index)
                     book.save()
                     

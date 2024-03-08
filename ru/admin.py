@@ -116,7 +116,7 @@ excel.short_description = 'Excel'
 
 
 class ruTextAdmin(ExportActionMixin, admin.ModelAdmin):
-    list_filter = ['pub_date', 'grade', 'level_result']
+    list_filter = ['pub_date','level_result']
     list_display  = ( 'book_title', 'book_author', 'pub_date', 'words_q', 'sentence_q', 'level_result')
     actions = [excel]
 
