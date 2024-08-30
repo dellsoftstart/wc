@@ -1,0 +1,160 @@
+
+    
+  <div class="modal fade" id="info_modal_5" tabindex="-1" aria-labelledby="info_modal_5" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u>Көп муундан турган сөздөр:</u></p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="tab-4">
+
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Көп муунду сөздөр</th>
+                <th>Узундугу (тамгалар менен)</th>
+                <th>Жыштыгы</th>
+              </tr>
+            </thead>
+         
+            <tbody>
+            
+              {% for freq, fquant in longw_frequencies.items %}
+                <tr>
+                  <th>&nbsp;</th>
+                  <td>{{freq.0}}</td>
+                  <td>{{freq.1}}</td>
+                  <td>{{fquant}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+  
+  <div class="modal fade" id="info_modal_6" tabindex="-1" aria-labelledby="info_modal_6" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u>Татаал сөздөр</u>  – эки же андан көп сөздүн айкалышынан түзүлүп, жаңы маани берген сөздөр. <u>Кош сөздөр</u> – жуп-жубу менен уйкаш айтылып, бир маани берген татаал сөздөр (мисалы, ата-эне, бала-чака, кыз-кыркын, кызыл-тазыл).</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Татаал жана кош сөздөр</th>
+                <td>&nbsp;</td>
+                <th>Жыштыгы</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in lcword_frequencies.items %}
+                <tr>
+                  <td>{{freq}}</td>
+                  <td>&nbsp;</td>
+                  <td>{{fquant}}</td>
+                  
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  
+  
+  <div class="modal fade" id="info_modal_7" tabindex="-1" aria-labelledby="info_modal_7" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;">
+            1-4-класстар үчүн <u>сейрек кездешүүчү сөздөр</u> текстти окууда жана түшүнүүдө кыйынчылыктарды жаратат</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Сейрек сөздөрдүн тизмеси</th>
+                <td>&nbsp;</td>
+                <th>Жыштыгы</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in rareword_frequencies.items %}
+            <tr>
+              <td>{{freq}}</td>
+              <td>&nbsp;</td>
+              <td>{{fquant}}</td>
+          
+            </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="modal fade" id="info_modal_8" tabindex="-1" aria-labelledby="info_modal_8" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u>Татаал сөздөр</u>  – эки же андан көп сөздүн айкалышынан түзүлүп, жаңы маани берген сөздөр. <u>Кошмок сөздөр</u> эки же андан көп сөздөн туруп, бир гана маани туюнткан татаал сөздөр (мисалы, айыл чарба, өнөр жай, темир жол).</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table id="longwordfreq" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Кошмок сөздөрдүн тизмеси</th>
+                <td>&nbsp;</td>
+                <th>Жыштыгы</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              {% for freq, fquant  in compound_word_frequencies.items %}
+            <tr>
+          <td>{{freq}}</td>
+          <td>&nbsp;</td>
+          <td>{{fquant}}</td>
+          
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="modal fade" id="info_modal_9" tabindex="-1" aria-labelledby="info_modal_9" aria-hidden="true">
+    <div class="modal-dialog role=" document"">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p style="text-align: justify;"> <u> Лексикалык көп түрдүүлүк коэффициенти (ЛТК) </u>   – берилген узундуктагы текстти курууда сөздүк байлыктын даражасын чагылдырган тексттин сандык мүнөздөмөсү. </p>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><b>Формула: </b> ЛТК =  Уникалдык сөздөрдүн саны / Сөздөрдүн жалпы саны</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
