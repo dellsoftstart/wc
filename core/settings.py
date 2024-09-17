@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ('www.sabakapp.online, .sabakapp.online, https://www.sabakapp.online').split(',')
+ALLOWED_HOSTS = ('www.wcalc.online, .wcalc.online, https://www.wcalc.online').split(',')
 #ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
