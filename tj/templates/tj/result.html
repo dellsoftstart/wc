@@ -143,10 +143,7 @@
                     
                     <td>
                       Общее количество слов 
-                      <i class="fa fa-info-circle info_btn" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_1" 
-                      aria-hidden="true"></i>
+                     
              
                     </td>
                     <td><span id="words">{{words_q}}</span><em> слов<em></td>
@@ -163,10 +160,7 @@
                   </tr>
                   <tr id="NumberOfSentences">
                     <td>Общее кол-во предложений
-                      <i class="fa fa-info-circle info_btn" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_2" 
-                      aria-hidden="true"></i>
+                      
                     </td>
                     <td><span id="sentences">{{sentence_q}}</span><em> предл.</em></td>
                     <td {% if sentence_q >= 1 and sentence_q <= g1_sentence_q_l1  %} class="wordQClass" {% endif %}><em> {{g1_sentence_q_l1}} предл.</em></td>
@@ -184,10 +178,7 @@
 
                   <tr id="average_syllables">
                     <td>Средняя длина слов в слогах
-                      <i class="fa fa-info-circle info_btn" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_3" 
-                      aria-hidden="true"></i>
+                     
                     </td>
                     <td><span id="m_slog">{{syllables_avg}}</span><em> слога</em></td>
                     <td {% if syllables_avg >= 1 and syllables_avg <= g1_avgwl_insyllables_l1  %} class="wordQClass" {% endif %}><em>{{g1_avgwl_insyllables_l1}} слога</em></td>
@@ -205,10 +196,7 @@
 
                   <tr id="AverageNumberOfSent">
                     <td>Средняя длина предложений в словах
-                      <i class="fa fa-info-circle info_btn" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_4" 
-                      aria-hidden="true"></i>
+                      
                     </td>
                     <td><span id="sentence_avg">{{sentence_avg}}</span> <em>слов</em></td>
                     <td {% if sentence_avg >= 1 and sentence_avg <= g1_avgl_sentences_inw_l1  %} class="wordQClass" {% endif %}><em> {{g1_avgl_sentences_inw_l1}} слов</em></td>
@@ -228,7 +216,7 @@
                     <td>Многосложные слова: > 3 слогов</em>
                       <i class="fa fa-info-circle info_btn" 
                       data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_5" 
+                      data-bs-target="#info_modal_1" 
                       aria-hidden="true"></i>
                     </td>
                     <td><span id="long_words1">{{multisyllabic_wq}}</span><em> слов<em></td>
@@ -244,10 +232,10 @@
                   </tr>
 
                   <tr id="NumberOfLongWords">
-                    <td>Сложные слова
+                    <td>Сложные слова для 1-4 кл.
                       <i class="fa fa-info-circle info_btn" 
                       data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_6" 
+                      data-bs-target="#info_modal_2" 
                       aria-hidden="true"></i>
                     </td>
                     <td><span id="long_words1">{{compound_w_q}}</span><em> слов<em></td>
@@ -290,10 +278,10 @@
                   </thead>
 
                   <tr id="NumberOfLongWords">
-                    <td>Лексическое разнообразие
+                    <td>Лексическое разнообразие</em>
                       <i class="fa fa-info-circle info_btn" 
                       data-bs-toggle="modal" 
-                      data-bs-target="#info_modal_7" 
+                      data-bs-target="#info_modal_4" 
                       aria-hidden="true"></i>
                     </td>
                     <td><span id="long_words1">{{lexical_d}}</span><em> <em></td>
